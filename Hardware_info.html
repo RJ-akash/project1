@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Management</title>
+</head>
+<body>
+    <h1>Hardware Management</h1>
+    <table>
+        <tr>
+            <th>DEVICE</th>
+            <th>STATUS</th>
+        </tr>
+        {% for item in hardware_info %}
+        <tr>
+            <td>MOUSE</td>
+            <td>CONNECTED</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
