@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 50px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .green-light {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: green;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Storage Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Device</th>
+                <th>Mountpoint</th>
+                <th>File System Type</th>
+                <th>Total Size(GB)</th>
+                <th>Used Size(GB)</th>
+                <th>Free Size(GB)</th>
+                <th>Percentage Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for storage in storage_info %}
+            <tr>
+                <td>{{ storage.device }}</td>
+                <td>{{ storage.mountpoint }}</td>
+                <td>{{ storage.fstype }}</td>
+                <td>{{ storage.total_size }}</td>
+                <td>{{ storage.used_size }}</td>
+                <td>{{ storage.free_size }}</td>
+                <td>{{ storage.percentage }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
